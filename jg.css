@@ -1,0 +1,84 @@
+:root{
+      --bg:#0b0f1a; /* fundo escuro elegante */
+      --bg-soft:#12182a;
+      --panel:#161e33;
+      --accent:#5cffc7;
+      --accent-2:#7aa2ff;
+      --accent-3:#ffd36a;
+      --danger:#ff6b6b;
+      --text:#e8eefc;
+      --muted:#8ea0c6;
+      --shadow: 0 10px 30px rgba(0,0,0,.35);
+      --radius: 20px;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0; font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji";
+      color:var(--text); background:
+        radial-gradient(1200px 600px at 20% -10%, rgba(92,255,199,.12), transparent 60%),
+        radial-gradient(900px 500px at 120% 10%, rgba(122,162,255,.10), transparent 60%),
+        var(--bg);
+      display:flex; align-items:center; justify-content:center; padding:24px;
+    }
+    .app{width:min(1100px,100%);}
+
+    .header{display:flex; align-items:center; justify-content:space-between; gap:12px; margin-bottom:18px}
+    .brand{display:flex; align-items:center; gap:12px}
+    .brand .logo{width:42px; height:42px; border-radius:12px; background:linear-gradient(135deg, var(--accent), var(--accent-2)); box-shadow:var(--shadow); display:grid; place-items:center; font-weight:800; color:#06101a}
+    .brand h1{font-size: clamp(18px, 4vw, 24px); margin:0; letter-spacing:.5px}
+    .controls{display:flex; gap:10px; flex-wrap:wrap}
+    .btn{appearance:none; border:none; border-radius:14px; padding:10px 14px; background:var(--panel); color:var(--text); cursor:pointer; box-shadow:var(--shadow); transition: transform .08s ease, .2s ease, opacity .2s;
+    display:inline-flex; align-items:center; gap:10px; font-weight:600}
+    .btn:hover{transform: translateY(-1px)}
+    .btn:active{transform: translateY(1px)}
+    .btn.primary{background:linear-gradient(135deg, var(--accent-2), var(--accent)); color:#071018}
+    .btn.danger{background:linear-gradient(135deg, #ff9ca0, var(--danger)); color:#2b0a0a}
+    .btn.ghost{background:transparent; border:1px solid rgba(255,255,255,.12)}
+    .btn.small{padding:8px 10px; border-radius:12px; font-size:14px}
+    .switch{display:inline-flex; align-items:center; gap:10px; background:var(--panel); padding:8px 12px; border-radius:14px}
+
+    .grid{display:grid; grid-template-columns: 1.1fr .9fr; gap:18px}
+    @media (max-width: 920px){ .grid{grid-template-columns:1fr} }
+
+    .machine{
+      background:linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,0)) , var(--bg-soft);
+      padding:18px; border-radius:var(--radius); box-shadow:var(--shadow); position:relative; overflow:hidden
+    }
+    .machine::after{ /* brilho lateral */
+      content:""; position:absolute; inset: -20%; background: radial-gradient(400px 120px at 120% 50%, rgba(92,255,199,.07), transparent 60%);
+      pointer-events:none
+    }
+    .screen{ background: #0a0e18; border-radius:16px; padding:16px; border:1px solid rgba(255,255,255,.07); position:relative; overflow:hidden }
+    .reels{ display:grid; grid-template-columns: repeat(3, 1fr); gap:12px; height:210px }
+    .reel{ background: linear-gradient(180deg, #0e1424, #0a0e18); border-radius:14px; border:1px solid rgba(255,255,255,.06); overflow:hidden; position:relative }
+    .strip{ position:absolute; left:0; right:0; will-change:transform }
+    .symbol{ height:70px; display:grid; place-items:center; font-size:36px; text-shadow: 0 6px 20px rgba(0,0,0,.6) }
+    .symbol.win{ animation: pulse .8s ease-in-out 0s 3 }
+    @keyframes pulse { 0%,100%{ transform:scale(1)} 50%{ transform:scale(1.08)} }
+
+    .panel{ display:grid; grid-template-columns: 1fr 1fr; gap:16px; margin-top:16px }
+    @media (max-width: 560px){ .panel{ grid-template-columns:1fr } }
+
+    .balance, .bet{ background: var(--panel); border-radius:14px; padding:14px; border:1px solid rgba(255,255,255,.07) }
+    .balance h3, .bet h3{ margin:0 0 10px; font-size:14px; color:var(--muted); letter-spacing:.6px; text-transform:uppercase }
+    .row{ display:flex; align-items:center; justify-content:space-between; gap:10px }
+    .value{ font-size:28px; font-weight:800; letter-spacing:.5px }
+    .chip-controls{ display:flex; align-items:center; gap:8px; flex-wrap:wrap }
+    .chip{ padding:8px 12px; border-radius:999px; border:1px solid rgba(255,255,255,.1); background:rgba(255,255,255,.04); cursor:pointer; font-weight:700 }
+    .chip.active{ outline:2px solid var(--accent); background:rgba(92,255,199,.12); color:var(--accent) }
+
+    .actions{ display:flex; gap:10px; flex-wrap:wrap; margin-top:12px }
+
+    .table{ background: var(--panel); border-radius:14px; padding:14px; border:1px solid rgba(255,255,255,.07) }
+    .table h3{ margin:0 0 12px; font-size:14px; color:var(--muted); letter-spacing:.6px; text-transform:uppercase }
+    table{ width:100%; border-collapse:collapse; font-size:14px }
+    th, td{ padding:10px; text-align:left; border-bottom:1px dashed rgba(255,255,255,.06) }
+    tr:last-child td{ border-bottom:none }
+    .pay{ font-weight:800; color:var(--accent-3) }
+
+    .ticker{ position:absolute; inset:auto 14px 14px 14px; background: linear-gradient(90deg, rgba(92,255,199,.08), rgba(122,162,255,.08)); border:1px solid rgba(255,255,255,.08); border-radius:12px; padding:8px 12px; font-size:13px; color:var(--muted); display:flex; gap:10px; overflow:auto; scrollbar-width:none }
+    .ticker b{ color:var(--accent-3) }
+
+    .toasts{ position: fixed; top: 16px; right: 16px; display: grid; gap: 8px; z-index: 10 }
+    .toast{ background: #0f1527; border: 1px solid rgba(255,255,255,.1); border-left:4px solid var(--accent); color: var(--text); padding: 10px 12px; border-radius: 12px; box-shadow: var(--shadow); font-size: 14px }

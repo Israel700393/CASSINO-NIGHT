@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CASSIN</title>
+ <link rel="stylesheet" href="jg.css">
+ <script src="jg.js"></script>
+ <link rel="stylesheet" href="jg.PHP">
+ <link rel="stylesheet" href="jg.SQL">
+</head>
+<body>
+  <div class="app">
+    <div class="header">
+      <div class="brand">
+        <div class="logo">🎰</div>
+        <h1> — Cassino teste</h1>
+      </div>
+      <div class="controls">
+            <span id="userbox" class="btn small ghost">👤 <b id="username">desconhecido</b></span>
+      <button id="btn-login" class="btn small">🔐 Entrar</button>
+      <button id="btn-sound" class="btn small">🔊 Som: <span>ON</span></button>
+      <button id="btn-help" class="btn small ghost">❔ Ajuda</button>
+      <button id="btn-reset" class="btn small danger">⟳ Reset</button>
+      </div>
+    </div>
+
+    <div class="grid">
+      <section class="machine">
+        <div class="screen">
+          <div class="reels" id="reels">
+            <!-- 3 carretéis -->
+          </div>
+          <div class="ticker" id="ticker">Boas-vindas! Pressione <b>ESPAÇO</b> para girar. — Gerencie seu <b>saldo</b> e ajuste a <b>aposta</b>.</div>
+        </div>
+
+        <div class="panel">
+          <div class="balance">
+            <h3>Saldo</h3>
+            <div class="row">
+              <div class="value" id="balance">R$ 0,00</div>
+              <div class="actions">
+                <button id="btn-deposit" class="btn">➕ Depositar</button>
+                <button id="btn-withdraw" class="btn ghost">➖ Sacar</button>
+              </div>
+            </div>
+          </div>
+          <div class="bet">
+            <h3>Aposta</h3>
+            <div class="row">
+              <div class="value" id="bet">R$ 1,00</div>
+              <div class="chip-controls" id="chips">
+                <!-- valores de aposta -->
+              </div>
+            </div>
+            <div class="actions">
+              <button id="btn-spin" class="btn primary" style="min-width:140px; font-size:18px">🟢 GIRAR</button>
+              <button id="btn-max" class="btn">MAX</button>
+              <button id="btn-auto" class="btn ghost">▶️ AUTO</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <aside class="table">
+        <h3>Tabela de Pagamentos (linha horizontal central)</h3>
+        <table>
+          <thead>
+            <tr><th>Combinação</th><th>Multiplicador</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>💎 💎 💎</td><td class="pay">× 25</td></tr>
+            <tr><td>⭐ ⭐ ⭐</td><td class="pay">× 10</td></tr>
+            <tr><td>🍀 🍀 🍀</td><td class="pay">× 7</td></tr>
+            <tr><td>🍒 🍒 🍒</td><td class="pay">× 5</td></tr>
+            <tr><td>🔔 🔔 🔔</td><td class="pay">× 3</td></tr>
+            <tr><td>Qualquer 2 iguais (ex.: A A B)</td><td class="pay">× 1</td></tr>
+          </tbody>
+        </table>
+      </aside>
+    </div>
+
+    <div class="toasts" id="toasts"></div>
+  </div>
+
+</body>
+</html>
